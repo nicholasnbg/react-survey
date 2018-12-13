@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SurveyHeader from './components/SurveyHeader'
+import SurveyBody from './components/surveyBody/SurveyBody'
+import styled from 'styled-components'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <AppWrapper>
+        <Container>
+          <SurveyHeader surveyHeading="Demo Survey" employeeName="By Nick Gray"></SurveyHeader>
+          <SurveyBody />
+        </Container>
+      </AppWrapper>
     );
   }
 }
 
 export default App;
+
+const Container = styled.div`
+  margin: auto;
+  max-width: 70vw;
+`
+
+const AppWrapper = styled.div`
+  background: #F3EDEE;
+  min-height: 100vh;
+` 
